@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import httpStatus from 'http-status';
 import messagesServices from '../services/messages-services';
-import { NotFound } from '@/errors';
+import { NotFound } from '../errors';
 
 export async function getAllMessages(req: Request, res: Response) {
     const result = await messagesServices.getAllMessages();
