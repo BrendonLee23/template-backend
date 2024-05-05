@@ -40,8 +40,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getAllMessages = void 0;
-var messages_services_1 = __importDefault(require("../services/messages-services"));
 var http_status_1 = __importDefault(require("http-status"));
+var messages_services_1 = __importDefault(require("../services/messages-services"));
+var errors_1 = require("../errors");
 function getAllMessages(req, res) {
     return __awaiter(this, void 0, void 0, function () {
         var result;
@@ -50,6 +51,9 @@ function getAllMessages(req, res) {
                 case 0: return [4 /*yield*/, messages_services_1.default.getAllMessages()];
                 case 1:
                     result = _a.sent();
+                    if (result.length === 0) {
+                        throw (0, errors_1.NotFound)();
+                    }
                     res.send(result).status(http_status_1.default.OK);
                     return [2 /*return*/];
             }

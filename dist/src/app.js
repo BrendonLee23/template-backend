@@ -30,11 +30,13 @@ var express_1 = __importStar(require("express"));
 require("express-async-errors");
 var http_status_1 = __importDefault(require("http-status"));
 var messages_router_1 = __importDefault(require("./routers/messages-router"));
+var error_middleware_1 = __importDefault(require("./middlewares/error-middleware"));
 var app = (0, express_1.default)();
 app.use((0, express_1.json)()); // body-parser
 // app.use(cors()); //
-app.get("/health", function (req, res) {
+app.get('/health', function (req, res) {
     return res.status(http_status_1.default.OK).send("I'm Ok!");
 });
-app.use("/messages", messages_router_1.default);
+app.use('/messages', messages_router_1.default);
+app.use(error_middleware_1.default);
 exports.default = app;

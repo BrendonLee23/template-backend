@@ -4,7 +4,7 @@
   "description": "Template base para projetos backend futuros",
   "main": "index.js",
   "scripts": {
-    "build": "tsc --project tsconfig.build.json && tsc-alias && cp -r public dist/",
+    "build": "tsc --project tsconfig.build.json && tsc-alias",
     "start": "prisma migrate deploy && npm run seed && node dist/src/server.js",
     "seed": "prisma db seed",
     "dev": "nodemon src/server.ts",

@@ -48,9 +48,9 @@ function main() {
                         skipDuplicates: true,
                         data: [
                             {
-                                text: "Olá meus amigos e amigas! Vencemos mais um desafio!"
-                            }
-                        ]
+                                text: 'Olá meus amigos e amigas! Vencemos mais um desafio!',
+                            },
+                        ],
                     })];
                 case 1:
                     _a.sent();
@@ -59,7 +59,8 @@ function main() {
         });
     });
 }
-main().then(function () { return __awaiter(void 0, void 0, void 0, function () {
+main()
+    .then(function () { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, database_1.default.$disconnect()];
@@ -68,7 +69,8 @@ main().then(function () { return __awaiter(void 0, void 0, void 0, function () {
                 return [2 /*return*/];
         }
     });
-}); }).catch(function (e) { return __awaiter(void 0, void 0, void 0, function () {
+}); })
+    .catch(function (e) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:

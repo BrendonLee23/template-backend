@@ -8,6 +8,6 @@ function findAllMessages() {
     return database_1.default.message.findMany();
 }
 var messagesRepository = {
-    findAllMessages: findAllMessages
+    findAllMessages: findAllMessages,
 };
 exports.default = messagesRepository;
