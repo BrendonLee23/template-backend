@@ -1,11 +1,14 @@
-import prisma from "../database";
+import { Message } from '@prisma/client';
+import prisma from '../database';
 
-function findAllMessages(){
+export type CreateMessageBody = Omit<Message, 'id'>;
+
+function findAllMessages() {
     return prisma.message.findMany();
 }
 
 const messagesRepository = {
-    findAllMessages
-}
+    findAllMessages,
+};
 
 export default messagesRepository;

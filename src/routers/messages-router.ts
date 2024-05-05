@@ -1,8 +1,8 @@
-import { getAllMessages } from "../controllers/messages-controller";
-import {Router} from "express";
+import { Router } from 'express';
+import { getAllMessages } from '../controllers/messages-controller';
 
 const messageRouter = Router();
 
-messageRouter.get("/", getAllMessages)
+messageRouter.get('/', getAllMessages);
 
 export default messageRouter;
